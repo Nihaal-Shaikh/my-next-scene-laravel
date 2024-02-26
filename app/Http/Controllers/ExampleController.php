@@ -10,6 +10,7 @@ class ExampleController extends Controller
 {
     public function example(Request $request)
     {
+        return $request->query();
         // Access query parameters from the request
         $type = $request->query('type');
         $genres = $request->query('genres');
@@ -34,8 +35,8 @@ class ExampleController extends Controller
 
             foreach ($movies as $movie) {
                 $response = Http::withHeaders([
-                    'X-RapidAPI-Key' => '5ff3c4e578msh3e4ae70afc36fe4p132436jsn96dbf5146781',
-                    'X-RapidAPI-Host' => 'movie-database-alternative.p.rapidapi.com',
+                    'X-RapidAPI-Key' =>  config('services.rapidapi.key'),
+                    'X-RapidAPI-Host' =>  config('services.rapidapi.host'),
                 ])->get('https://movie-database-alternative.p.rapidapi.com/', [
                     'r' => 'json',
                     'i' => $movie->imdb_id,

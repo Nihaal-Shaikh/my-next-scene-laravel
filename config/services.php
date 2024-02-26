@@ -30,5 +30,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'rapidapi' => [
+        'key' => env('RAPIDAPI_KEY'),
+        'host' => 'movie-database-alternative.p.rapidapi.com',
+    ],
 
 ];
