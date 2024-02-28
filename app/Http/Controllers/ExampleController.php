@@ -10,7 +10,7 @@ class ExampleController extends Controller
 {
     public function example(Request $request)
     {
-        return $request->query();
+        // return $request->query();
         // Access query parameters from the request
         $type = $request->query('type');
         $genres = $request->query('genres');

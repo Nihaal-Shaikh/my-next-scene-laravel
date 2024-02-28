@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('end_year')->nullable(); // endYear (nullable if not always present)
             $table->integer('runtime_minutes')->nullable(); // runtimeMinutes (nullable if not always present)
             $table->string('genres')->nullable(); // genres (nullable if not always present)
+            $table->decimal('avg_rating', 5, 2)->default(0.0);
+            $table->unsignedInteger('num_votes')->default(0);
             $table->timestamps();
         });
     }
